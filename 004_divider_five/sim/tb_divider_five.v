@@ -4,7 +4,7 @@ module tb_divider_five();
 reg     sys_clk;
 reg     sys_rst_n;
 
-wire    clk_out;
+wire    clk_flag;
 
 initial begin
   sys_clk = 1'b1;
@@ -20,7 +20,7 @@ divider_five    divider_five_inst
     .sys_clk  (sys_clk)     ,
     .sys_rst_n(sys_rst_n)   ,
 
-    .clk_out  (clk_out)
+    .clk_flag  (clk_flag)
 );
 
 
