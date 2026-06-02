@@ -1,1 +1,75 @@
+# ============================================================
+#  FPGA 工程 .gitignore  (主要面向 Gowin / 高云 IDE)
+#  原则：只入库“源文件”，忽略所有“编译中间产物”
+# ============================================================
+
+# ---------- Gowin (高云) ----------
+# 综合 / 布局布线 / 时序分析等全部输出都在 impl/ 下，整个忽略
+# 包含: gwsynthesis/  pnr/  temp/  *.vg *.fs *.bin *.binx *.db
+#        *.log *.rpt.* *.html *.power.* *.pin.* *.timing_paths
+#        *_process_config.json 等
+impl/
+
+# 工程的“用户级”配置（窗口布局、最近打开等，因人/因机而异）
+*.gprj.user
+
+# IP Core Generator 偶尔产生的临时/锁文件
+*.ipc.lock
+
+# 注意：以下是【源文件】，请勿忽略（默认就会被跟踪）
+#   *.gprj                工程文件
+#   src/                  你的 RTL、约束、IP
+#   *.v *.sv *.vhd        HDL 源码
+#   *.cst                 物理约束(引脚)
+#   *.sdc                 时序约束
+#   src/**/*.ipc *.mod    IP 配置(可据此重新生成 IP)
+#   src/**/*_tmp.v        IP 例化模板
+# 如需把比特流(*.fs)也一并提交，可在此处显式取消忽略：
+#   !**/impl/pnr/*.fs
+
+# ---------- 其它常见 FPGA 工具（以后若混用可留着）----------
+# Quartus（你仓库里已有 quart_prj/）
 quart_prj/
+db/
+incremental_db/
+output_files/
+*.qws
+*.rpt
+*.summary
+*.smsg
+*.sof
+*.pof
+
+# Xilinx Vivado
+*.jou
+*.str
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+
+# Lattice Diamond / Radiant
+*.dir/
+impl1/
+.recovery/
+
+# ---------- 编辑器 / 操作系统 ----------
+# VS Code / JetBrains
+.vscode/
+.idea/
+
+# 备份与交换文件
+*.bak
+*.orig
+*~
+*.swp
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
