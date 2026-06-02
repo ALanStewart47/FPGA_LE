@@ -1,0 +1,13 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW1N-9C" pn="GW1N-UV9LQ144C6/I5">gw1n9c-019</Device>
+    <FileList>
+        <File path="src/bram_test_top.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_sp/gowin_sp.v" type="file.verilog" enable="1"/>
+        <File path="src/bram_.cst" type="file.cst" enable="1"/>
+        <File path="src/bram_test_top.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>
